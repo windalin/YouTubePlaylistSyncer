@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubePlaylistSyncer.Network", "Src\YouTubePlaylistSyncer.Network\YouTubePlaylistSyncer.Network.csproj", "{8C022F95-3A7F-40CA-AF50-2A6EFDFAE6DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{7488BAE2-0B4E-4EF5-B562-EEB73AF9CAA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubePlaylistSyncer.WPF", "Src\YouTubePlaylistSyncer.WPF\YouTubePlaylistSyncer.WPF.csproj", "{37014D78-2401-4C5A-8415-F342ED294E50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CEB442B5-07DB-476B-95E2-F72760ED78E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.YouTubePlaylistSyncer.Network", "Test\UnitTest.YouTubePlaylistSyncer.Network\UnitTest.YouTubePlaylistSyncer.Network.csproj", "{A24B99E0-D1D0-4C9E-9ADD-2E02A151F349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.YouTubePlaylistSyncer.WPF", "Test\UnitTest.YouTubePlaylistSyncer.WPF\UnitTest.YouTubePlaylistSyncer.WPF.csproj", "{14A8E0F6-DC86-42A5-96E7-888573640376}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAutomation.YouTubePlaylistSyncer.WPF", "Test\UIAutomation.YouTubePlaylistSyncer.WPF\UIAutomation.YouTubePlaylistSyncer.WPF.csproj", "{4ED22DCA-372F-4209-8D8C-132115155D75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C022F95-3A7F-40CA-AF50-2A6EFDFAE6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C022F95-3A7F-40CA-AF50-2A6EFDFAE6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C022F95-3A7F-40CA-AF50-2A6EFDFAE6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C022F95-3A7F-40CA-AF50-2A6EFDFAE6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37014D78-2401-4C5A-8415-F342ED294E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37014D78-2401-4C5A-8415-F342ED294E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37014D78-2401-4C5A-8415-F342ED294E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37014D78-2401-4C5A-8415-F342ED294E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A24B99E0-D1D0-4C9E-9ADD-2E02A151F349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A24B99E0-D1D0-4C9E-9ADD-2E02A151F349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A24B99E0-D1D0-4C9E-9ADD-2E02A151F349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A24B99E0-D1D0-4C9E-9ADD-2E02A151F349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A8E0F6-DC86-42A5-96E7-888573640376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A8E0F6-DC86-42A5-96E7-888573640376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A8E0F6-DC86-42A5-96E7-888573640376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A8E0F6-DC86-42A5-96E7-888573640376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED22DCA-372F-4209-8D8C-132115155D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED22DCA-372F-4209-8D8C-132115155D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED22DCA-372F-4209-8D8C-132115155D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED22DCA-372F-4209-8D8C-132115155D75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C022F95-3A7F-40CA-AF50-2A6EFDFAE6DE} = {7488BAE2-0B4E-4EF5-B562-EEB73AF9CAA6}
+		{37014D78-2401-4C5A-8415-F342ED294E50} = {7488BAE2-0B4E-4EF5-B562-EEB73AF9CAA6}
+		{A24B99E0-D1D0-4C9E-9ADD-2E02A151F349} = {CEB442B5-07DB-476B-95E2-F72760ED78E3}
+		{14A8E0F6-DC86-42A5-96E7-888573640376} = {CEB442B5-07DB-476B-95E2-F72760ED78E3}
+		{4ED22DCA-372F-4209-8D8C-132115155D75} = {CEB442B5-07DB-476B-95E2-F72760ED78E3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB13501C-5F19-46F1-BCB2-6B165EE37AD6}
+	EndGlobalSection
+EndGlobal
