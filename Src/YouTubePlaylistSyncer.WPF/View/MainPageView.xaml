@@ -30,12 +30,14 @@
 				Margin="10,5,10,5"
 				Text="Enter Playlist URL" />
 			<TextBox
+				x:Name="PlaylistURLTextBox"
 				Grid.Column="1"
 				Width="500"
 				Height="20"
 				MaxWidth="500"
 				Text="{Binding PlaylistURL, UpdateSourceTrigger=PropertyChanged}" />
 			<Button
+				x:Name="GetRemotePlaylistInfoButton"
 				Grid.Column="2"
 				Margin="10,5,10,5"
 				Command="{Binding GetRemotePlaylistCommand}"
@@ -54,11 +56,13 @@
 				Margin="10,5,10,5"
 				Text="Output Location" />
 			<TextBox
+				x:Name="OutputLocationTextBox"
 				Grid.Column="1"
 				Width="500"
 				Height="20"
 				Text="{Binding OutputLocation, UpdateSourceTrigger=PropertyChanged}" />
 			<Button
+				x:Name="BrowseButton"
 				Grid.Column="2"
 				Margin="10,5,10,5"
 				Command="{Binding BrowseOutputLocationCommand}"
@@ -77,6 +81,7 @@
 				Margin="10,5,10,5"
 				Text="File Naming Scheme" />
 			<ComboBox
+				x:Name="FileNamingSchemeComboBox"
 				Grid.Column="1"
 				Width="250"
 				Height="20"
@@ -85,6 +90,7 @@
 				SelectedIndex="0"
 				SelectedItem="{Binding NamingScheme}" />
 			<Button
+				x:Name="ApplyNamingSchemeButton"
 				Grid.Column="2"
 				Margin="10,5,10,5"
 				Command="{Binding ApplyNamingSchemeCommand}"
@@ -92,7 +98,7 @@
 		</Grid>
 
 		<TabControl Grid.Row="3" Margin="5,5,5,5">
-			<TabItem Header="Remote Playlist">
+			<TabItem x:Name="RemotePlaylistTab" Header="Remote Playlist">
 				<DataGrid
 					x:Name="RemotePlaylistDataGrid"
 					Height="600"
@@ -107,55 +113,58 @@
 					</DataGrid.Resources>
 					<DataGrid.Columns>
 						<DataGridTextColumn
+							Width="40"
 							Binding="{Binding Index}"
 							Header="Index"
-							IsReadOnly="True" 
-							Width="40"/>
+							IsReadOnly="True" />
 						<DataGridTextColumn
+							Width="560"
 							Binding="{Binding Title}"
 							Header="Title"
-							IsReadOnly="True" 
-							Width="560"/>
+							IsReadOnly="True" />
 						<DataGridTextColumn
+							Width="100"
 							Binding="{Binding ID}"
 							Header="ID"
-							IsReadOnly="True" 
-							Width="100"/>
+							IsReadOnly="True" />
 						<DataGridTextColumn
+							Width="50"
 							Binding="{Binding Status}"
 							Header="Status"
-							IsReadOnly="True" 
-							Width="50"/>
+							IsReadOnly="True" />
 						<DataGridTextColumn
+							Width="90"
 							Binding="{Binding AgeRestricted}"
 							Header="Age Restricted"
-							IsReadOnly="True" 
-							Width="90"/>
+							IsReadOnly="True" />
 						<DataGridTextColumn
+							Width="95"
 							Binding="{Binding Duration}"
 							Header="Duration"
-							IsReadOnly="True" 
-							Width="95"/>
+							IsReadOnly="True" />
 						<DataGridTextColumn
+							Width="575"
 							Binding="{Binding FilenameOnDisk}"
 							Header="Filename on Disk"
-							IsReadOnly="False" 
-							Width="575"/>
+							IsReadOnly="False" />
 						<DataGridTextColumn
+							Width="100"
 							Binding="{Binding Action}"
 							Header="Action"
-							IsReadOnly="False" 
-							Width="100"/>
+							IsReadOnly="False" />
 						<DataGridTextColumn
+							Width="110"
 							Binding="{Binding DownloadStatus}"
 							Header="Download Status"
-							IsReadOnly="True" 
-							Width="110"/>
+							IsReadOnly="True" />
 					</DataGrid.Columns>
 				</DataGrid>
 			</TabItem>
 
-			<TabItem Header="Local Playlist" IsEnabled="False" Visibility="Hidden">
+			<TabItem
+				Header="Local Playlist"
+				IsEnabled="False"
+				Visibility="Hidden">
 				<DataGrid
 					Height="600"
 					Margin="10,10,10,10"
@@ -179,7 +188,10 @@
 				</DataGrid>
 			</TabItem>
 
-			<TabItem Header="Difference" IsEnabled="False" Visibility="Hidden">
+			<TabItem
+				Header="Difference"
+				IsEnabled="False"
+				Visibility="Hidden">
 				<DataGrid
 					Height="600"
 					Margin="10,10,10,10"
@@ -201,6 +213,7 @@
 				<ColumnDefinition Width="auto" SharedSizeGroup="ThirdColumn" />
 			</Grid.ColumnDefinitions>
 			<Button
+				x:Name="BeginDownloadButton"
 				Grid.Column="0"
 				Width="120"
 				Margin="10,5,10,5"
@@ -210,13 +223,13 @@
 			<!--  AutomationdId is equal to Name if it is set.  -->
 			<Button
 				Name="TestButton"
-				Visibility="Hidden"
 				Grid.Column="2"
 				Width="120"
 				Margin="10,5,10,5"
 				HorizontalAlignment="Left"
 				Command="{Binding TestCommand}"
-				Content="Test" />
+				Content="Test"
+				Visibility="Hidden" />
 		</Grid>
 	</Grid>
 </UserControl>
