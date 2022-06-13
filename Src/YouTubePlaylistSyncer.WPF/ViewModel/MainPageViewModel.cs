@@ -99,7 +99,7 @@ namespace YouTubePlaylistSyncer.WPF.ViewModel {
 			int i = 1;
 
 			do {
-				PlaylistItemListResponse resp = await YouTubeAPI.GetPlaylistPageAsync(this.playlistID, nextPageToken);
+				PlaylistItemListResponse resp = await YouTubeAPI.GetPlaylistPageAsync(this.playlistID, nextPageToken); // TODO: request may throw exception
 				nextPageToken = resp.NextPageToken;
 
 				foreach (PlaylistItem item in resp.Items) {
@@ -108,7 +108,6 @@ namespace YouTubePlaylistSyncer.WPF.ViewModel {
 						Title = item.Snippet.Title,
 						ID = item.ContentDetails.VideoId,
 						Status = item.Status.PrivacyStatus
-						//Action = item.Status.PrivacyStatus is "public" ? "Download" : "None"
 					};
 					video.PropertyChanged += RemotePlaylistItemPropertyChanged;
 					this.remotePlaylistVideos.Add(video);
@@ -124,7 +123,7 @@ namespace YouTubePlaylistSyncer.WPF.ViewModel {
 
 				foreach (Google.Apis.YouTube.v3.Data.Video item in resp.Items) {
 					this.remotePlaylistVideos[k].Duration = new Duration(item.ContentDetails.Duration);
-					this.remotePlaylistVideos[k].AgeRestricted = item.ContentDetails.ContentRating.YtRating; // yt api doesn't work properly, sometimes it returns nothing even if a video is age restricted, need an alternative
+					this.remotePlaylistVideos[k].AgeRestricted = item.ContentDetails.ContentRating.YtRating; // TODO: yt api doesn't work properly, sometimes it returns nothing even if a video is age restricted, need an alternative
 					k++;
 				}
 			}

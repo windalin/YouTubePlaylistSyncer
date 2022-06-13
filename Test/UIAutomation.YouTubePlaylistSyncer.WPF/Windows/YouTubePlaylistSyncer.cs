@@ -7,7 +7,9 @@ using System.IO;
 using System.Diagnostics;
 using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FlaUI.Core.Definitions;
+using UIAutomation.YouTubePlaylistSyncer.WPF.Extensions;
 
 namespace UIAutomation.YouTubePlaylistSyncer.WPF.Windows {
 	public class YouTubePlaylistSyncer : WindowBase {
@@ -35,10 +37,38 @@ namespace UIAutomation.YouTubePlaylistSyncer.WPF.Windows {
 			RemotePlaylistTab = this.GetElementByAutomationID("RemotePlaylistTab").AsTabItem();
 		}
 
-
-
 		private AutomationElement GetElementByAutomationID(string automationID) {
 			return this.mainPageView.FindFirstDescendant(cf.ByAutomationId(automationID));
+		}
+
+		public YouTubePlaylistSyncer EnterPlaylistURL(string url) {
+			PlaylistURLTextBox.AssertIsEnabled();
+			PlaylistURLTextBox.Enter(url);
+			return this;
+		}
+
+		public YouTubePlaylistSyncer ClickGetRemotePlaylistInfo() {
+			GetRemotePlaylistInfoButton.AssertIsEnabled();
+			GetRemotePlaylistInfoButton.Click();
+			return this;
+		}
+
+		public YouTubePlaylistSyncer EnterOutputLocation(string outputLocation) {
+			OutputLocationTextBox.AssertIsEnabled();
+			OutputLocationTextBox.Enter(outputLocation);
+			return this;
+		}
+
+		public YouTubePlaylistSyncer ClickBrowse() {
+			BrowseButton.AssertIsEnabled();
+			BrowseButton.Click();
+			return this;
+		}
+
+		public YouTubePlaylistSyncer ClickApplyNamingScheme() {
+			ApplyNamingSchemeButton.AssertIsEnabled();
+			ApplyNamingSchemeButton.Click();
+			return this;
 		}
 	}
 }
