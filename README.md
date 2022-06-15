@@ -5,4 +5,4 @@ Queries the YouTube Data API for information about a playlist and downloads the 
 
 Requires a Google API key saved in your Environment Variables to access the YouTube Data API.  See https://cloud.google.com/docs/authentication/api-keys.
 
-Currently uses VideoLibrary for downloading and MediaToolkit to convert .mp4 to .mp3.
+Currently uses VideoLibrary for downloading and MediaToolkit to convert .mp4 to .mp3.  Uses FlaUI 3 for automated UI tests.
