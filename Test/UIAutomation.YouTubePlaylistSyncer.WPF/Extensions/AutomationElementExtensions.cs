@@ -10,7 +10,7 @@ using FlaUI.UIA3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FlaUI.Core.Definitions;
 using System.Runtime.CompilerServices;
-
+using FlaUI.Core.Conditions;
 
 namespace UIAutomation.YouTubePlaylistSyncer.WPF.Extensions {
 	public static class AutomationElementExtensions {

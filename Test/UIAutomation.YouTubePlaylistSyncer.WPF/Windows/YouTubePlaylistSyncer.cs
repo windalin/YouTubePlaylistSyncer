@@ -10,6 +10,7 @@ using FlaUI.UIA3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FlaUI.Core.Definitions;
 using UIAutomation.YouTubePlaylistSyncer.WPF.Extensions;
+using UIAutomation.YouTubePlaylistSyncer.WPF.Grids;
 
 namespace UIAutomation.YouTubePlaylistSyncer.WPF.Windows {
 	public class YouTubePlaylistSyncer : WindowBase {
@@ -21,6 +22,7 @@ namespace UIAutomation.YouTubePlaylistSyncer.WPF.Windows {
 		public Button ApplyNamingSchemeButton { get; }
 		public Button BeginDownloadButton { get; }
 		public ComboBox FileNamingSchemeComboBox { get; }
+		public RemotePlaylistDataGrid RemotePlaylistDatagrid { get; }
 		public TextBox PlaylistURLTextBox { get; }
 		public TextBox OutputLocationTextBox { get; }
 		public TabItem RemotePlaylistTab { get; }
@@ -32,6 +34,7 @@ namespace UIAutomation.YouTubePlaylistSyncer.WPF.Windows {
 			ApplyNamingSchemeButton = this.GetElementByAutomationID("ApplyNamingSchemeButton").AsButton();
 			BeginDownloadButton = this.GetElementByAutomationID("BeginDownloadButton").AsButton();
 			FileNamingSchemeComboBox = this.GetElementByAutomationID("FileNamingSchemeComboBox").AsComboBox();
+			RemotePlaylistDatagrid = new RemotePlaylistDataGrid(this.GetElementByAutomationID("RemotePlaylistDataGrid").AsDataGridView());
 			PlaylistURLTextBox = this.GetElementByAutomationID("PlaylistURLTextBox").AsTextBox();
 			OutputLocationTextBox = this.GetElementByAutomationID("OutputLocationTextBox").AsTextBox();
 			RemotePlaylistTab = this.GetElementByAutomationID("RemotePlaylistTab").AsTabItem();
@@ -65,9 +68,28 @@ namespace UIAutomation.YouTubePlaylistSyncer.WPF.Windows {
 			return this;
 		}
 
+		public YouTubePlaylistSyncer SelectFileNamingScheme(string namingScheme) {
+			FileNamingSchemeComboBox.AssertIsEnabled();
+			int index = 0;
+			switch (namingScheme) {
+				case "Remove Invalid Characters":
+					index = 0;
+					break;
+			}
+			FileNamingSchemeComboBox.Select(index);
+			FileNamingSchemeComboBox.SelectedItem.Click();
+			return this;
+		}
+
 		public YouTubePlaylistSyncer ClickApplyNamingScheme() {
 			ApplyNamingSchemeButton.AssertIsEnabled();
 			ApplyNamingSchemeButton.Click();
+			return this;
+		}
+
+		public YouTubePlaylistSyncer ClickBeginDownload() {
+			BeginDownloadButton.AssertIsEnabled();
+			BeginDownloadButton.Click();
 			return this;
 		}
 	}
